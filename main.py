@@ -4,8 +4,8 @@ import smtplib
 import random
 import pandas
 
-my_email=os.environ.get("MY_EMAIL")
-my_password=os.environ.get("MY_PASSWORD")
+MY_EMAIL=os.environ.get("MY_EMAIL")
+MY_PASSWORD=os.environ.get("MY_PASSWORD")
 
 letter_name_list=["letter_1.txt", "letter_2.txt", "letter_3.txt"]
 random_letter=random.choice(letter_name_list)
@@ -30,6 +30,6 @@ for i in range(length):
 
         with smtplib.SMTP("smtp.gmail.com") as connection:
             connection.starttls()
-            connection.login(user=my_email, password=my_password)
-            connection.sendmail(from_addr=my_email, to_addrs=birthday_person_email,
+            connection.login(user=MY_EMAIL, password=MY_PASSWORD)
+            connection.sendmail(from_addr=MY_EMAIL, to_addrs=birthday_person_email,
                                 msg=f"Subject:Happy Birthday!\n\n{birthday_wish_content}")
