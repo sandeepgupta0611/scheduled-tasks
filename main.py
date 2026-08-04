@@ -1,10 +1,11 @@
+import os
 import datetime as dt
 import smtplib
 import random
 import pandas
 
-my_email="sandeepgupta1106@gmail.com"
-my_password="xcikyoprurdpksas"
+my_email=os.environ.get("MY_EMAIL")
+my_password=os.environ.get("MY_PASSWORD")
 
 letter_name_list=["letter_1.txt", "letter_2.txt", "letter_3.txt"]
 random_letter=random.choice(letter_name_list)
